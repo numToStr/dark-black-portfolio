@@ -119,10 +119,10 @@ particlesJS('particles-js',
 
 $('.hamburger-menu').click(function (e) {
     $(this).toggleClass('become-cross');
-    // var curtain = $('.menu-curtain');
-    // if (curtain.hasClass('menu-curtain-open')) {
-    //     curtain.removeClass('menu-curtain-open').addClass('menu-curtain-close');
-    // } else {
-    //     curtain.removeClass('menu-curtain-close').addClass('menu-curtain-open');
-    // }
+    var curtain = $('.menu-curtain');
+    if (curtain.hasClass('menu-curtain-open')) {
+        curtain.removeClass('menu-curtain-open').addClass('menu-curtain-close');
+    } else {
+        curtain.removeClass('menu-curtain-close').addClass('menu-curtain-open');
+    }
 })
