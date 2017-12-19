@@ -1,0 +1,52 @@
+.black {
+    background: $black;
+}
+.white {
+    background: $white;
+}
+.dark {
+    background: $dark;
+}
+.pointer {
+    cursor: pointer;
+}
+.social-wrapper {
+    .liner {
+        transform: rotate(90deg) scaleX(7) translateX(-50%);
+    }
+}
+.transition {
+    transition: .3s cubic-bezier(0.57, 0.04, 0, 0.97);
+}
+.become-cross {
+    .hamburger-line:nth-child(1) {
+        transform: translateY(300%) rotate(45deg);
+    }
+    .hamburger-line:nth-child(2) {
+        visibility: hidden;
+        opacity: 0;
+    }
+    .hamburger-line:nth-child(3) {
+        transform: translateY(-300%) rotate(-45deg);
+    }
+}
+.menu-curtain {
+    width: 0%;
+    z-index: 500;
+}
+.menu-curtain-close {
+    animation: stretchIn 1s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+    @keyframes stretchIn {
+        0% { width: 100% }
+        100% { width: 0% }
+    }
+}
+.menu-curtain-open {
+    animation: stretchAway 1s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+    @keyframes stretchAway {
+        0% { width: 0% }
+        100% { width: 100% }
+    }
+}
+// cubic-bezier(0.57, 0.04, 0, 0.97)
+// cubic-bezier(0.94, 0.22, 0.07, 1.01)
