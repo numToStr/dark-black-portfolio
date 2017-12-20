@@ -53,3 +53,29 @@ a {
 }
 // cubic-bezier(0.57, 0.04, 0, 0.97)
 // cubic-bezier(0.94, 0.22, 0.07, 1.01)
+// .menu-curtain-list-item-go-down
+.menu-curtain-list-item p {
+    opacity: 0;
+}
+.menu-curtain-list-item-go-down p {
+    animation: fadeDown 1.5s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+    transform: translateY(-100%);
+    opacity: 0;
+    @keyframes fadeDown {
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+}
+.menu-curtain-list-item-go-up p {
+    animation: fadeUp .75s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+    transform: translateY(0%);
+    opacity: 1;
+    @keyframes fadeUp {
+        100% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+}

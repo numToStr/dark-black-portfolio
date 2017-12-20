@@ -119,10 +119,23 @@ particlesJS('particles-js',
 
 $('.hamburger-menu').click(function (e) {
     $(this).toggleClass('become-cross');
+
     var curtain = $('.menu-curtain');
+    var curtainList = $('.menu-curtain-list-item');
+
     if (curtain.hasClass('menu-curtain-open')) {
         curtain.removeClass('menu-curtain-open').addClass('menu-curtain-close');
     } else {
         curtain.removeClass('menu-curtain-close').addClass('menu-curtain-open');
     }
+    if (curtainList.hasClass('menu-curtain-list-item-go-down')) {
+        curtainList.removeClass('menu-curtain-list-item-go-down').addClass('menu-curtain-list-item-go-up');
+        setTimeout(function () {
+            $('.menu-curtain-list').addClass('d-none');
+        }, 500);
+    } else {
+        $('.menu-curtain-list').removeClass('d-none');
+        curtainList.removeClass('menu-curtain-list-item-go-up').addClass('menu-curtain-list-item-go-down');
+    }
+    // $('.menu-curtain-list-item').toggleClass('menu-curtain-list-item-go-down');
 })
