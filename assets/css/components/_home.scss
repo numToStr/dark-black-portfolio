@@ -13,9 +13,22 @@ a {
 .pointer {
     cursor: pointer;
 }
+.hamburger-menu {
+    width: 14%;
+    @include sm {
+        width: 8%;
+    }
+    @include md {
+        width: 90%;
+    }
+}
 .social-wrapper {
     .liner {
-        transform: rotate(90deg) scaleX(7) translateX(-50%);
+        display: none;
+        @include md {
+            display: block;
+            transform: rotate(90deg) scaleX(7) translateX(-50%);
+        }
     }
 }
 .transition {
