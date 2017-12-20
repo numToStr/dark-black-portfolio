@@ -42,11 +42,6 @@ a {
 }
 
 // nav and header ==============
-.h-md-100 {
-    @include md {
-        height: 100%;
-    }
-}
 .hamburger-menu {
     width: 14%;
     @include sm {
