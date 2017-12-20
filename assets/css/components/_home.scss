@@ -21,6 +21,18 @@ a {
 .transition {
     transition: .3s cubic-bezier(0.57, 0.04, 0, 0.97);
 }
+.author-title {
+    font-size: 2.5rem;
+    @include md {
+        font-size: 6rem;
+    }
+}
+.author-description {
+    font-size: .75rem;
+    @include md {
+        font-size: 1.2rem;
+    }
+}
 .become-cross {
     .hamburger-line:nth-child(1) {
         transform: translateY(300%) rotate(45deg);
@@ -53,7 +65,6 @@ a {
 }
 // cubic-bezier(0.57, 0.04, 0, 0.97)
 // cubic-bezier(0.94, 0.22, 0.07, 1.01)
-// .menu-curtain-list-item-go-down
 .menu-curtain-list-item p {
     opacity: 0;
 }
