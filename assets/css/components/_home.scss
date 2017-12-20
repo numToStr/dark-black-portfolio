@@ -13,27 +13,21 @@ a {
 .pointer {
     cursor: pointer;
 }
-.hamburger-menu {
-    width: 14%;
-    @include sm {
-        width: 8%;
-    }
-    @include md {
-        width: 90%;
-    }
-}
-.social-wrapper {
-    .liner {
-        display: none;
-        @include md {
-            display: block;
-            transform: rotate(90deg) scaleX(7) translateX(-50%);
-        }
-    }
-}
 .transition {
     transition: .3s cubic-bezier(0.57, 0.04, 0, 0.97);
 }
+.flex-grow {
+    flex-grow: 1 !important;
+}
+.flex-basis-0 {
+    flex-basis: initial !important;
+}
+.flex-basis-md-100 {
+    @include md {
+        flex-basis: 100%;
+    }
+}
+// intro ==============
 .author-title {
     font-size: 2.5rem;
     @include md {
@@ -46,6 +40,22 @@ a {
         font-size: 1.2rem;
     }
 }
+
+// nav and header ==============
+.h-md-100 {
+    @include md {
+        height: 100%;
+    }
+}
+.hamburger-menu {
+    width: 14%;
+    @include sm {
+        width: 8%;
+    }
+    @include md {
+        width: 90%;
+    }
+}
 .become-cross {
     .hamburger-line:nth-child(1) {
         transform: translateY(300%) rotate(45deg);
@@ -56,6 +66,15 @@ a {
     }
     .hamburger-line:nth-child(3) {
         transform: translateY(-300%) rotate(-45deg);
+    }
+}
+.social-wrapper {
+    .liner {
+        display: none;
+        @include md {
+            display: block;
+            transform: rotate(90deg) scaleX(7) translateX(-50%);
+        }
     }
 }
 .menu-curtain {
