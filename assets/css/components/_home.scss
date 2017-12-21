@@ -27,9 +27,22 @@ a {
         flex-basis: 100%;
     }
 }
+.display-dyna {
+    font-size: 1.8rem;
+    font-weight: 300;
+    @include sm {
+        font-size: 2rem;
+    }
+    @include md {
+        font-size: 3rem;
+    }
+}
 // intro ==============
 .author-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    @include sm {
+        font-size: 2.5rem;
+    }
     @include md {
         font-size: 6rem;
     }
@@ -43,7 +56,7 @@ a {
 
 // nav and header ==============
 .hamburger-menu {
-    width: 14%;
+    width: 12%;
     @include sm {
         width: 8%;
     }
@@ -53,17 +66,29 @@ a {
 }
 .become-cross {
     .hamburger-line:nth-child(1) {
-        transform: translateY(300%) rotate(45deg);
+        transform: translateY(210%) rotate(45deg);
+        @include sm {
+            transform: translateY(300%) rotate(45deg);
+        }
     }
     .hamburger-line:nth-child(2) {
         visibility: hidden;
         opacity: 0;
     }
     .hamburger-line:nth-child(3) {
-        transform: translateY(-300%) rotate(-45deg);
+        transform: translateY(-210%) rotate(-45deg);
+        @include sm {
+            transform: translateY(-300%) rotate(-45deg);
+        }
     }
 }
 .social-wrapper {
+    ul li svg {
+        width: .85rem;
+        @include sm {
+            width: 1rem;
+        }
+    }
     .liner {
         display: none;
         @include md {
