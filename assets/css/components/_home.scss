@@ -329,3 +329,71 @@ a {
         }
     }
 }
+// footer ============
+.footer {
+    bottom: 1rem;
+    @include md {
+        bottom: 1.5rem;
+    }
+}
+.navigation-dots {
+    padding: .22rem;
+    @include md {
+        padding: .3rem;
+    }
+    &.white-border {
+        border: .05rem solid $white;
+        &.active {
+            background: $white;
+        }
+        @include md {
+            border: .1rem solid $white;
+        }
+    }
+    &.black-border {
+        border: .05rem solid $black;
+        &.active {
+            background: $black;
+        }
+        @include md {
+            border: .1rem solid $black;
+        }
+    }
+}
+.view-profile-wrapper {
+    font-size: .8rem;
+    letter-spacing: .2rem;
+    @include md {
+        font-size: initial;
+        letter-spacing: .3rem;
+    }
+}
+@mixin before {
+    position: absolute;
+    content: '';
+    border-top: .4rem solid transparent;
+    border-bottom: .4rem solid transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%,-50%);
+}
+.circle-arrow {
+    position: relative;
+    padding: .9rem;
+    border-radius: 50%;
+    @include md {
+        padding: 1.2rem;
+    }
+    &.white {
+        &::before {
+            @include before;
+            border-left: .4rem solid $black;
+        }
+    }
+    &.black {
+        &::before {
+            @include before;
+            border-left: .4rem solid $white;
+        }
+    }
+}

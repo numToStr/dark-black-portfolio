@@ -8,7 +8,7 @@ $curtain-list-item-span: 31;
 
 @for $i from 1 through 5 {
     .letter-spacing-#{$i} {
-        letter-spacing: #{$i*.5}rem;
+        letter-spacing: #{$i*.3}rem;
     }
 }
 
