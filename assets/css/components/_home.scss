@@ -228,9 +228,11 @@ a {
     }
 }
 .author-description {
-    font-size: .75rem;
+    font-size: .65rem;
+    letter-spacing: .25rem;
     @include md {
         font-size: 1.2rem;
+        letter-spacing: .5rem;
     }
 }
 
