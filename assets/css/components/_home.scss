@@ -217,6 +217,14 @@ a {
     opacity: 0.25;
   }
 }
+// panels =============
+.panel {
+    opacity: 0;
+    &.is-show {
+        opacity: 1;
+        z-index: 10;
+    }
+}
 // intro ==============
 .author-title {
     font-size: 2rem;
@@ -305,6 +313,7 @@ a {
 .menu-curtain-list-item-go-down p {
     transform: translateY(-100%);
     opacity: 0;
+    // here 31 is the total count of words in individaul links in menu
     @for $i from 1 through 31 {
         &:nth-child(#{$i}) {
             animation: fadeDown 1.5s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
@@ -332,6 +341,7 @@ a {
 // footer ============
 .footer {
     bottom: 1rem;
+    z-index: 50;
     @include md {
         bottom: 1.5rem;
     }
@@ -394,6 +404,16 @@ a {
         &::before {
             @include before;
             border-left: .4rem solid $white;
+        }
+    }
+}
+//aboout ==========
+.about {
+    .about-body {
+        font-weight: 300;
+        font-size: 1.2rem;
+        @include md {
+            font-size: 1.5rem;
         }
     }
 }
