@@ -120,6 +120,8 @@ particlesJS('particles-js',
 var curtainHideTimeout;
 var curtain = $('.menu-curtain');
 var curtainList = $('.menu-curtain-list-item');
+var holder = document.getElementById('holder');
+var panels = $('.panel');
 
 $('.hamburger-menu').click(function (e) {
     $(this).toggleClass('become-cross');
@@ -136,5 +138,40 @@ $('.hamburger-menu').click(function (e) {
         $('.menu-curtain-list').removeClass('d-none');
         curtainList.removeClass('menu-curtain-list-item-go-up').addClass('menu-curtain-list-item-go-down');
     }
-    
 })
+
+var canScroll = true, scrollController = null, scrollDuration = 900;
+$(window).on({
+    'mousewheel DOMMouseScroll': function (e) {
+        // if you scroll up original value will be negative and scroll down will be positive,
+       var delta = -e.originalEvent.wheelDelta;
+       if (delta > 20 && canScroll) { // scroll up
+           canScroll = false;
+           clearTimeout(scrollController);
+           scrollController = setTimeout(() => {
+               canScroll = true;
+           }, scrollDuration);
+   
+   
+           console.log('up');
+       } else if (delta < -20 && canScroll) { // scroll down
+           canScroll = false;
+           clearTimeout(scrollController);
+           scrollController = setTimeout(() => {
+               canScroll = true;
+           }, scrollDuration);
+   
+   
+           console.log('down');
+       }
+   }
+})
+// initialize hammer instance with element
+var hammer = new Hammer(holder);
+// create events instances
+var swipe = new Hammer.Swipe();
+// adding events to the hammer instance
+hammer.add([swipe]);
+
+hammer.on("swipeup", e => e);
+hammer.on("swipedown", e => e);
