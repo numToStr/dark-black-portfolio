@@ -122,6 +122,9 @@ var curtain = $('.menu-curtain');
 var curtainList = $('.menu-curtain-list-item');
 var holder = document.getElementById('holder');
 var panels = $('.panel');
+var dots = $('.navigation-dots');
+var curIndex = 0;
+var canScroll = true, scrollController = null, scrollDuration = 900;
 
 $('.hamburger-menu').click(function (e) {
     $(this).toggleClass('become-cross');
@@ -140,32 +143,41 @@ $('.hamburger-menu').click(function (e) {
     }
 })
 
-var canScroll = true, scrollController = null, scrollDuration = 900;
-$(window).on({
-    'mousewheel DOMMouseScroll': function (e) {
-        // if you scroll up original value will be negative and scroll down will be positive,
-       var delta = -e.originalEvent.wheelDelta;
-       if (delta > 20 && canScroll) { // scroll up
-           canScroll = false;
-           clearTimeout(scrollController);
-           scrollController = setTimeout(() => {
-               canScroll = true;
-           }, scrollDuration);
-   
-   
-           console.log('up');
-       } else if (delta < -20 && canScroll) { // scroll down
-           canScroll = false;
-           clearTimeout(scrollController);
-           scrollController = setTimeout(() => {
-               canScroll = true;
-           }, scrollDuration);
-   
-   
-           console.log('down');
-       }
-   }
-})
+$(window).on('mousewheel DOMMouseScroll', function (e) {
+    // if you scroll up original value will be negative and scroll down will be positive,
+    var delta = -e.originalEvent.wheelDelta;
+    if (delta > 20 && canScroll) { // scroll up
+        canScroll = false;
+        clearTimeout(scrollController);
+        scrollController = setTimeout(() => {
+            canScroll = true;
+        }, scrollDuration);
+        
+        if (curIndex < (panels.length - 1)) {
+            curIndex+=1;
+            console.log('up : ', curIndex);
+            dotsFade(curIndex);
+            panelsFade(curIndex);
+        } else {
+            curIndex = 0;
+            dotsFade(curIndex);
+            panelsFade(curIndex);
+        }
+    } else if (delta < -20 && canScroll) { // scroll down
+        canScroll = false;
+        clearTimeout(scrollController);
+        scrollController = setTimeout(() => {
+            canScroll = true;
+        }, scrollDuration);
+        if (curIndex >= 1) {
+            curIndex-=1;
+            console.log('down : ', curIndex);
+            dotsFade(curIndex);
+            panelsFade(curIndex);
+        }
+    }
+});
+
 // initialize hammer instance with element
 var hammer = new Hammer(holder);
 // create events instances
@@ -175,3 +187,21 @@ hammer.add([swipe]);
 
 hammer.on("swipeup", e => e);
 hammer.on("swipedown", e => e);
+
+// console.log(panels.height() + panels.offset().top)
+
+dots.click(function () {
+    var dotsIndex = dots.index($(this));
+    curIndex = dotsIndex;
+    dotsFade(curIndex);
+    panelsFade(curIndex);
+})
+
+function panelsFade(index) {
+    panels.removeClass('is-show');
+    panels.eq(index).addClass('is-show');
+}
+function dotsFade(index) {
+    dots.removeClass('active');
+    dots.eq(index).addClass('active');
+}
