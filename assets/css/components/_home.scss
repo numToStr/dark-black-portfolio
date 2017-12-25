@@ -307,8 +307,32 @@ a {
 }
 // cubic-bezier(0.57, 0.04, 0, 0.97)
 // cubic-bezier(0.94, 0.22, 0.07, 1.01)
-.menu-curtain-list-item p {
-    opacity: 0;
+.line-effect {
+    position: relative;
+    &:hover::before {
+        content: '';
+        position: absolute;
+        padding: .05rem;
+        background: $dark;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 0%;
+        animation: line-effect .5s ease-in-out forwards;
+        @keyframes line-effect {
+            100% {
+                width: 120%;
+            }
+        }
+    }
+}
+.menu-curtain-list-item {
+    p {
+        opacity: 0;
+        &:hover {
+            color: red;
+        }
+    }
 }
 .menu-curtain-list-item-go-down p {
     transform: translateY(-100%);
