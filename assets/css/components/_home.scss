@@ -220,6 +220,7 @@ a {
 // panels =============
 .panel {
     opacity: 0;
+    overflow: auto;
     &.is-show {
         opacity: 1;
         z-index: 10;
