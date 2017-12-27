@@ -158,10 +158,10 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             console.log('up : ', curIndex);
             dotsFade(curIndex);
             panelsFade(curIndex);
-        } else {
-            curIndex = 0;
-            dotsFade(curIndex);
-            panelsFade(curIndex);
+        // } else {
+        //     curIndex = 0;
+        //     dotsFade(curIndex);
+        //     panelsFade(curIndex);
         }
     } else if (delta < -20 && canScroll) { // scroll down
         canScroll = false;
