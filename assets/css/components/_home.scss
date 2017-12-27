@@ -410,27 +410,41 @@ a {
     border-bottom: .4rem solid transparent;
     top: 50%;
     left: 50%;
-    transform: translate(-35%,-50%);
 }
 .circle-arrow {
     position: relative;
     padding: .9rem;
     border-radius: 50%;
+    background: $white;
     @include md {
         padding: 1.2rem;
     }
-    &.white {
+    &.right {
         &::before {
             @include before;
             border-left: .4rem solid $black;
+            transform: translate(-35%,-50%);
         }
     }
-    &.black {
+    &.left {
         &::before {
             @include before;
-            border-left: .4rem solid $white;
+            border-right: .4rem solid $black;
+            transform: translate(-65%,-50%);
         }
     }
+    // &.white {
+    //     &::before {
+    //         @include before;
+    //         border-left: .4rem solid $black;
+    //     }
+    // }
+    // &.black {
+    //     &::before {
+    //         @include before;
+    //         border-left: .4rem solid $white;
+    //     }
+    // }
 }
 //aboout ==========
 .about {
