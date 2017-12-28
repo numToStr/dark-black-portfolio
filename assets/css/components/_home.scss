@@ -456,6 +456,15 @@ a {
         }
     }
 }
+// gallery
+.gallery {
+    .gallery-items {
+        height: 6.5rem;
+        @include md {
+            height: 16rem;
+        }
+    }
+}
 // projects 
 .projects {
     [class*='projects-controller'] {
