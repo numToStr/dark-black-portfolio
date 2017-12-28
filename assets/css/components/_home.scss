@@ -466,23 +466,39 @@ a {
         @include md {
             height: 25rem;
         }
-    }
-    .projects-container {
-        width: 75%;
-        @include md {
-            width: 50%;
+        .projects-container {
+            width: 75%;
+            @include lg {
+                width: 50%;
+            }
+            .project-items {
+                opacity: 0;
+                width: 140%;
+                height: 15rem;
+                @include sm {
+                    width: 100%;
+                }
+                @include md {
+                    width: 90%;
+                    height: 25rem;
+                }
+            }
         }
-        .project-items {
-            opacity: 0;
-            width: 140%;
-            height: 15rem;
-            @include sm {
-                width: 100%;
-            }
-            @include md {
-                height: 25rem;
-                width: 80%;
-            }
+    }
+    .project-navigation-dots {
+        border: 0.05rem solid transparent;
+        padding: .22rem;
+        @include md {
+            padding: .3rem;
+            border: 0.1rem solid transparent;
+        }
+        &.active {
+            background: transparent;
+            border-color: $white;
+            transform: scale(1.2);
+        }
+        &:hover {
+            transform: scale(1.2);
         }
     }
 }

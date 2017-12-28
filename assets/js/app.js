@@ -1,121 +1,119 @@
-particlesJS('particles-js',
-    {
-        "particles": {
-            "number": {
-            "value": 80,
-            "density": {
-                "enable": true,
-                "value_area": 800
-            }
-            },
-            "color": {
-            "value": "#ffffff"
-            },
-            "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            },
-            "polygon": {
-                "nb_sides": 5
-            },
-            "image": {
-                "src": "img/github.svg",
-                "width": 100,
-                "height": 100
-            }
-            },
-            "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-            }
-            },
-            "size": {
-            "value": 5,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-            }
-            },
-            "line_linked": {
+particlesJS('particles-js', {
+    "particles": {
+        "number": {
+        "value": 80,
+        "density": {
             "enable": true,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-            },
-            "move": {
-            "enable": true,
-            "speed": 6,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-            }
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "repulse"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "push"
-            },
-            "resize": true
-            },
-            "modes": {
-            "grab": {
-                "distance": 400,
-                "line_linked": {
-                "opacity": 1
-                }
-            },
-            "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
-            },
-            "repulse": {
-                "distance": 200
-            },
-            "push": {
-                "particles_nb": 4
-            },
-            "remove": {
-                "particles_nb": 2
-            }
-            }
-        },
-        "retina_detect": true,
-        "config_demo": {
-            "hide_card": false,
-            "background_color": "#b61924",
-            "background_image": "",
-            "background_position": "50% 50%",
-            "background_repeat": "no-repeat",
-            "background_size": "cover"
+            "value_area": 800
         }
+        },
+        "color": {
+        "value": "#ffffff"
+        },
+        "shape": {
+        "type": "circle",
+        "stroke": {
+            "width": 0,
+            "color": "#000000"
+        },
+        "polygon": {
+            "nb_sides": 5
+        },
+        "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+        }
+        },
+        "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+        }
+        },
+        "size": {
+        "value": 5,
+        "random": true,
+        "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+        }
+        },
+        "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+        },
+        "move": {
+        "enable": true,
+        "speed": 6,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+        }
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+        "onhover": {
+            "enable": true,
+            "mode": "repulse"
+        },
+        "onclick": {
+            "enable": true,
+            "mode": "push"
+        },
+        "resize": true
+        },
+        "modes": {
+        "grab": {
+            "distance": 400,
+            "line_linked": {
+            "opacity": 1
+            }
+        },
+        "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+        },
+        "repulse": {
+            "distance": 200
+        },
+        "push": {
+            "particles_nb": 4
+        },
+        "remove": {
+            "particles_nb": 2
+        }
+        }
+    },
+    "retina_detect": true,
+    "config_demo": {
+        "hide_card": false,
+        "background_color": "#b61924",
+        "background_image": "",
+        "background_position": "50% 50%",
+        "background_repeat": "no-repeat",
+        "background_size": "cover"
     }
-);
+});
 
 var curtainHideTimeout;
 var curtain = $('.menu-curtain');
@@ -123,8 +121,10 @@ var curtainList = $('.menu-curtain-list-item');
 var holder = document.getElementById('holder');
 var panels = $('.panel');
 var dots = $('.navigation-dots');
-var curIndex = 0;
-var canScroll = true, scrollController = null, scrollDuration = 900;
+var projDots = $('.project-navigation-dots');
+var projItems = $('.project-items');
+var curIndex = 0, projCurIndex = 0;
+var canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
 
 $('.hamburger-menu').click(function (e) {
     $(this).toggleClass('become-cross');
@@ -146,12 +146,12 @@ $('.hamburger-menu').click(function (e) {
 $(window).on('mousewheel DOMMouseScroll', function (e) {
     // if you scroll up original value will be negative and scroll down will be positive,
     var delta = -e.originalEvent.wheelDelta;
-    if (delta > 20 && canScroll) { // scroll up
+    if (delta > 40 && canScroll) { // scroll up
         canScroll = false;
         clearTimeout(scrollController);
         scrollController = setTimeout(() => {
             canScroll = true;
-        }, scrollDuration);
+        }, scrollTimeoutDuration);
         
         if (curIndex < (panels.length - 1)) {
             curIndex+=1;
@@ -163,12 +163,13 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
         //     dotsFade(curIndex);
         //     panelsFade(curIndex);
         }
-    } else if (delta < -20 && canScroll) { // scroll down
+    } else if (delta < -40 && canScroll) { // scroll down
         canScroll = false;
         clearTimeout(scrollController);
         scrollController = setTimeout(() => {
             canScroll = true;
-        }, scrollDuration);
+        }, scrollTimeoutDuration);
+        
         if (curIndex >= 1) {
             curIndex-=1;
             console.log('down : ', curIndex);
@@ -204,4 +205,35 @@ function panelsFade(index) {
 function dotsFade(index) {
     dots.removeClass('active');
     dots.eq(index).addClass('active');
+}
+
+projDots.click(function () {
+    var projDotindex = projDots.index($(this));
+    projCurIndex = projDotindex;
+    projDotsFade(projCurIndex);
+    projItemsFade(projCurIndex);
+})
+
+$('.projects-controller-right').click(function () {
+    if (projCurIndex < (projDots.length - 1)) {
+        projCurIndex+=1;
+        projDotsFade(projCurIndex);
+        projItemsFade(projCurIndex);
+    }
+})
+$('.projects-controller-left').click(function () {
+    if (projCurIndex > 0) {
+        projCurIndex-=1;
+        projDotsFade(projCurIndex);
+        projItemsFade(projCurIndex);
+    }
+})
+
+function projDotsFade(index) {
+    projDots.removeClass('active');
+    projDots.eq(index).addClass('active');
+}
+function projItemsFade(index) {
+    projItems.removeClass('is-show');
+    projItems.eq(index).addClass('is-show');
 }
