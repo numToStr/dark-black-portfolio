@@ -221,10 +221,10 @@ a {
 .panel {
     opacity: 0;
     overflow: auto;
-    &.is-show {
-        opacity: 1;
-        z-index: 10;
-    }
+}
+.is-show {
+    opacity: 1 !important;
+    z-index: 10 !important;
 }
 // intro ==============
 .author-title {
@@ -453,6 +453,36 @@ a {
         font-size: 1.2rem;
         @include md {
             font-size: 1.5rem;
+        }
+    }
+}
+// projects 
+.projects {
+    [class*='projects-controller'] {
+        z-index: 15;
+    }
+    .projects-wrapper {
+        height: 15rem;
+        @include md {
+            height: 25rem;
+        }
+    }
+    .projects-container {
+        width: 75%;
+        @include md {
+            width: 50%;
+        }
+        .project-items {
+            opacity: 0;
+            width: 140%;
+            height: 15rem;
+            @include sm {
+                width: 100%;
+            }
+            @include md {
+                height: 25rem;
+                width: 80%;
+            }
         }
     }
 }
