@@ -3,6 +3,8 @@ var navLinksArray = ['home', 'about', 'projects', 'gallery', 'contact'];
 var authorName = "Vikas Raj";
 var authorDesc = "Front End Web Developer";
 // common ui variables == ends ==============
+var curtainNavLinks = '';
+
 var curtainHideTimeout;
 var curtain = $('.menu-curtain');
 var curtainList = $('.menu-curtain-list-item');
@@ -13,7 +15,6 @@ var projDots = $('.project-navigation-dots');
 var projItems = $('.project-items');
 var curIndex = 0, projCurIndex = 0;
 var canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
-var curtainNavLinks = '';
 
 // for (const link of navLinksArray) {
 //     curtainNavLinks += `<li class="menu-curtain-list-item my-3">
