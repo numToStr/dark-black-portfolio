@@ -47,6 +47,59 @@ a {
 .line-height-0 {
     line-height: 0;
 }
+// prelaoder =========================
+.preloader {
+    z-index: 1000;
+    // .preloader-text {
+    //     .preloader-text-item {
+    //         opacity: 0;
+    //         animation: welcome 5s cubic-bezier(0.78, 0.12, 0.45, 1.46) forwards;
+    //         @keyframes welcome {
+    //             90% {
+    //                 opacity: 1;
+    //             }
+    //             100% {
+    //                 opacity: 1;
+    //                 transform: translate(0,0);
+    //             }
+    //         }
+    //         &:nth-child(1) {
+    //             transform: translate(-1.5rem, 8rem);
+    //         }
+    //         &:nth-child(2) {
+    //             transform: translate(2.5rem, -10rem);
+    //         } 
+    //         &:nth-child(3) {
+    //             transform: translate(-7rem, -2rem);
+    //         } 
+    //         &:nth-child(4) {
+    //             transform: translate(-.5rem, 5rem);
+    //         } 
+    //         &:nth-child(5) {
+    //             transform: translate(2rem, -5rem);
+    //         } 
+    //         &:nth-child(6) {
+    //             transform: translate(-1.5rem, 15rem);
+    //         } 
+    //         &:nth-child(7) {
+    //             transform: translate(1.5rem, 3rem);
+    //         }
+    //     } 
+    // }
+    .beam {
+        opacity: .8;
+        animation: beam 1s ease-in-out infinite;
+        @keyframes beam {
+            100% {
+                opacity: 0;
+                transform: scale(10);
+            }
+        }
+        &.beam-two {
+            animation-delay: .5s;
+        }
+    }
+}
 // glitch-effect =====================
 .glitch-effect-neutral {
     animation: glitch-nuetral 2.5s infinite;

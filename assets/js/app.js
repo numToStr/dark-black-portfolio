@@ -143,6 +143,14 @@ particlesJS('particles-js', {
     }
 });
 
+window.onload = function () {
+    setTimeout(function () {
+        $('.preloader, .preloader *').fadeOut(800, function () {
+            $(this).removeClass('d-flex');
+        });
+    }, 1500);
+}
+
 $('.hamburger-menu').click(function (e) {
     $(this).toggleClass('become-cross');
 
