@@ -205,14 +205,19 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
 });
 
 // initialize hammer instance with element
-var hammer = new Hammer(holder);
-// create events instances
-var swipe = new Hammer.Swipe();
-// adding events to the hammer instance
-hammer.add([swipe]);
+var hammer = new Hammer.Manager(holder, {
+    domEvents: true,
+    recognizers : [
+        [Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]
+    ]
+});
 
-hammer.on("swipeup", e => e);
-hammer.on("swipedown", e => e);
+hammer.on("swipeup", e => {
+    alert('swipeup')
+});
+hammer.on("swipedown", e => {
+    alert('swipedown')
+});
 
 // console.log(panels.height() + panels.offset().top)
 
