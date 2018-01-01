@@ -1,0 +1,24 @@
+.panel.contact.position-absolute.w-100.h-100.d-flex.justify-content-center.align-items-center
+    .container.mb-4.mb-md-5
+        .row
+            .col-12.col-md-6.offset-md-3.text-white
+                h4.text-center.text-uppercase.letter-spacing-1.raleway.mb-2.mb-md-3 Say Hello...
+                form
+                    fieldset.mb-md-2
+                        .row
+                            .col-12.col-md-6
+                                label(for="name").w-100
+                                    small.d-block.raleway.text-uppercase.letter-spacing-2.mb-1 Name
+                                    input#name(type="text" name="Name" required).w-100.p-1.p-md-2
+                            .col-12.col-md-6
+                                label(for="email").w-100
+                                    small.d-block.raleway.text-uppercase.letter-spacing-2.mb-1 Email
+                                    input#email(type="email" name="Email" required valid).w-100.p-1.p-md-2
+                    fieldset.mb-md-2
+                        .row
+                            .col-12
+                                label(for="message").w-100
+                                    small.d-block.raleway.text-uppercase.letter-spacing-2.mb-1 Your Message
+                                    textarea#message(name="Message" required).w-100.p-1.p-md-2
+                    fieldset.text-center
+                        button(type="submit").text-uppercase.white.text-dark.py-1.px-3.letter-spacing-2.pointer submit

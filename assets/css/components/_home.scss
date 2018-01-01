@@ -574,3 +574,23 @@ a {
         }
     }
 }
+// contact ===============
+.contact {
+    input {
+        border: 2px solid $dark;
+        &:focus {
+            outline: none;
+        }
+    }
+    textarea {
+        resize: none;
+        height: 7rem;
+        @extend input;
+        @include md {
+            height: 10rem;
+        }
+    }
+    button {
+        border: 2px solid $dark;
+    }
+}
