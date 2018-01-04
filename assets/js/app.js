@@ -53,6 +53,7 @@ if (glitchEffect) {
     tempAuthorName += '</p>';
 }
 $('.author-title').html(tempAuthorName);
+$('.author-description').html(authorDesc);
 
 var socialLinks = '';
 for (const socialLink of socialLinksArray) {
