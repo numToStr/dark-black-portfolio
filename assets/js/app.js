@@ -12,8 +12,19 @@ $(document).ready(function () {
     var authorName = "Vikas Raj";
     var authorDesc = "Front End Web Developer";
     // common ui variables == ends ==============
+    
     var curtainNavLinks = '';
-
+    for (const link of navLinksArray) {
+        curtainNavLinks += `<li class="menu-curtain-list-item my-3">
+                                <a class="text-black transition line-effect d-inline-flex justify-content-center" href="#0">`;
+        for (const word of link) {
+            curtainNavLinks += `<p class="m-1">${word}</p>`;
+        }
+        curtainNavLinks += `</a>
+                                </li>`;
+    }
+    $('.menu-curtain-list').html(curtainNavLinks);
+    
     var curtainHideTimeout;
     var curtain = $('.menu-curtain');
     var curtainList = $('.menu-curtain-list-item');
@@ -25,15 +36,6 @@ $(document).ready(function () {
     var curIndex = 0, projCurIndex = 0;
     var canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
 
-    // for (const link of navLinksArray) {
-    //     curtainNavLinks += `<li class="menu-curtain-list-item my-3">
-    //                             <a class="text-black transition line-effect d-inline-flex justify-content-center" href="#0">`;
-    //     for (const word of link) {
-    //         curtainNavLinks += `<p class="m-1">${word}</p>`;
-    //     }
-    //     curtainNavLinks += `</a>
-    //                             </li>`;
-    // }
 
     particlesJS('particles-js', {
         "particles": {
