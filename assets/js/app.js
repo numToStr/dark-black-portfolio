@@ -8,6 +8,7 @@ window.onload = function () {
 
 $(document).ready(function () {
     // common ui variables ===========
+    var glitchEffect = true;
     var authorName = "Vikas Raj";
     var authorDesc = "Front End Web Developer";
     var socialLinksArray = [
@@ -34,6 +35,33 @@ $(document).ready(function () {
     ]
     var navLinksArray = ['home', 'about', 'projects', 'gallery', 'contact'];
     // common ui variables == ends ==============
+    
+    var tempAuthorName = '';
+    if (glitchEffect) {
+        for (let $i = 0; $i < 3; $i++) {
+            var glitchColor = $i === 0 ? 'glitch-effect-blue' : ( $i === 1 ? 'glitch-effect-red' : 'glitch-effect-neutral' );
+            tempAuthorName += '<p class="m-0 line-height-0 '+glitchColor+'">';
+            for (const authorLetter of authorName) {
+                if (authorLetter === ' ') {
+                    tempAuthorName += '<span class="mx-1 mx-md-3 px-sm-1"></span>';
+                } else {
+                    tempAuthorName += '<span class="mx-1 mx-md-2 px-1">'+authorLetter+'</span>';
+                }
+            }
+            tempAuthorName += '</p>';
+        }
+    } else {
+        tempAuthorName += '<p class="m-0 line-height-0">';
+        for (const authorLetter of authorName) {
+            if (authorLetter === ' ') {
+                tempAuthorName += '<span class="mx-1 mx-md-3 px-sm-1"></span>';
+            } else {
+                tempAuthorName += '<span class="mx-1 mx-md-2 px-1">'+authorLetter+'</span>';
+            }
+        }
+        tempAuthorName += '</p>';
+    }
+    $('.author-title').html(tempAuthorName);
 
     var socialLinks = '';
     for (const socialLink of socialLinksArray) {
@@ -49,8 +77,8 @@ $(document).ready(function () {
     for (const link of navLinksArray) {
         curtainNavLinks += `<li class="menu-curtain-list-item my-3">
                                 <a class="text-black transition line-effect d-inline-flex justify-content-center" href="#0">`;
-        for (const word of link) {
-            curtainNavLinks += `<p class="m-1">${word}</p>`;
+        for (const linkLetter of link) {
+            curtainNavLinks += `<p class="m-1">${linkLetter}</p>`;
         }
         curtainNavLinks += `</a>
                                 </li>`;
