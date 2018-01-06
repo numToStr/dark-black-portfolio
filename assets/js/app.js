@@ -1,4 +1,5 @@
 // common ui variables ===========
+
 var glitchEffect = true;
 var authorName = "Vikas Raj";
 var authorDesc = "Front End Web Developer";
@@ -25,6 +26,8 @@ var socialLinksArray = [
     }
 ]
 var navLinksArray = ['home', 'about', 'projects', 'gallery', 'contact'];
+var panels = $('.panel');
+
 // common ui variables == ends ==============
 
 var tempAuthorName = '';
@@ -77,6 +80,13 @@ for (const link of navLinksArray) {
 }
 $('.menu-curtain-list').html(curtainNavLinks);
 
+var navigationDots = '';
+for (let i = 0; i < panels.length; i++) {
+    let activeClass = i === 0 ? 'active' : '';
+    navigationDots += '<li class="navigation-dots list-inline-item rounded-circle pointer mx-1 transition white-border '+activeClass+'"></li>';
+}
+$('.navigation-dots-list').html(navigationDots);
+
 window.onload = function () {
     setTimeout(function () {
         $('.preloader, .preloader *').fadeOut(800, function () {
@@ -91,13 +101,11 @@ $(document).ready(function () {
     var curtain = $('.menu-curtain');
     var curtainList = $('.menu-curtain-list-item');
     var holder = document.getElementById('holder');
-    var panels = $('.panel');
     var dots = $('.navigation-dots');
     var projDots = $('.project-navigation-dots');
     var projItems = $('.project-items');
     var curIndex = 0, projCurIndex = 0;
     var canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
-
 
     particlesJS('particles-js', {
         "particles": {
