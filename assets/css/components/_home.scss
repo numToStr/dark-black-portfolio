@@ -399,13 +399,13 @@ a {
     }
 }
 .menu-curtain-list-item-go-down p {
-    transform: translateY(-100%);
+    transform: translateY(-120%);
     opacity: 0;
     // here 31 is the total count of words in individaul links in menu
     @for $i from 1 through 31 {
         &:nth-child(#{$i}) {
             animation: fadeDown 1.5s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
-            animation-delay: ($i) * .075s;
+            animation-delay: ($i) * .085s;
         }
     }
     @keyframes fadeDown {
