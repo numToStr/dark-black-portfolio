@@ -278,10 +278,10 @@ $(document).ready(function () {
     });
 
     hammer.on("swipeup", e => {
-        alert('swipeup')
+        console.log('swipeup')
     });
     hammer.on("swipedown", e => {
-        alert('swipedown')
+        console.log('swipedown')
     });
 
     // console.log(panels.height() + panels.offset().top)
