@@ -87,15 +87,15 @@ for (let i = 0; i < panels.length; i++) {
 }
 $('.navigation-dots-list').html(navigationDots);
 
-window.onload = function () {
-    setTimeout(function () {
-        $('.preloader, .preloader *').fadeOut(800, function () {
-            $(this).removeClass('d-flex');
+window.onload = () => {
+    setTimeout(() => {
+        $('.preloader, .preloader *').fadeOut(800, () => {
+            $('.preloader').removeClass('d-flex');
         });
     }, 1500);
 };
 
-$(document).ready(function () {
+$(document).ready(() => {
 
     let curtainHideTimeout;
     let curtain = $('.menu-curtain');
@@ -229,7 +229,7 @@ $(document).ready(function () {
 
         if (curtain.hasClass('menu-curtain-open')) {
             curtain.removeClass('menu-curtain-open').addClass('menu-curtain-close');
-            curtainHideTimeout = setTimeout(function () {
+            curtainHideTimeout = setTimeout(() => {
                 $('.menu-curtain-list').addClass('d-none');
             }, 400);
             curtainList.removeClass('menu-curtain-list-item-go-down').addClass('menu-curtain-list-item-go-up');
@@ -241,7 +241,7 @@ $(document).ready(function () {
         }
     })
 
-    $(window).on('mousewheel DOMMouseScroll', function (e) {
+    $(window).on('mousewheel DOMMouseScroll', e => {
         // if you scroll up original value will be negative and scroll down will be positive,
         let delta = -e.originalEvent.wheelDelta;
         if (delta > 40 && canScroll) { // scroll up
@@ -317,14 +317,14 @@ $(document).ready(function () {
         projItemsFade(projCurIndex);
     })
 
-    $('.projects-controller-right').click(function () {
+    $('.projects-controller-right').click(() => {
         if (projCurIndex < (projDots.length - 1)) {
             projCurIndex+=1;
             projDotsFade(projCurIndex);
             projItemsFade(projCurIndex);
         }
     })
-    $('.projects-controller-left').click(function () {
+    $('.projects-controller-left').click(() => {
         if (projCurIndex > 0) {
             projCurIndex-=1;
             projDotsFade(projCurIndex);
