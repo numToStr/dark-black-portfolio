@@ -1,9 +1,9 @@
-// common ui variables ===========
+// common ui letiables ===========
 
-var glitchEffect = true;
-var authorName = "Vikas Raj";
-var authorDesc = "Front End Web Developer";
-var socialLinksArray = [
+const glitchEffect = true;
+const authorName = "Vikas Raj";
+const authorDesc = "Front End Web Developer";
+const socialLinksArray = [
     {
         name: 'facebook',
         link: 'https://facebook.com/vkaasraj',
@@ -25,15 +25,15 @@ var socialLinksArray = [
         icon: '<svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 448 512"><path d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z"/></svg>',
     }
 ]
-var navLinksArray = ['home', 'about', 'projects', 'gallery', 'contact'];
-var panels = $('.panel');
+const navLinksArray = ['home', 'about', 'projects', 'gallery', 'contact'];
+const panels = $('.panel');
 
-// common ui variables == ends ==============
+// common ui letiables == ends ==============
 
-var tempAuthorName = '';
+let tempAuthorName = '';
 if (glitchEffect) {
     for (let $i = 0; $i < 3; $i++) {
-        var glitchColor = $i === 0 ? 'glitch-effect-blue' : ( $i === 1 ? 'glitch-effect-red' : 'glitch-effect-neutral' );
+        let glitchColor = $i === 0 ? 'glitch-effect-blue' : ( $i === 1 ? 'glitch-effect-red' : 'glitch-effect-neutral' );
         tempAuthorName += '<p class="m-0 line-height-0 '+glitchColor+'">';
         for (const authorLetter of authorName) {
             if (authorLetter === ' ') {
@@ -58,7 +58,7 @@ if (glitchEffect) {
 $('.author-title').html(tempAuthorName);
 $('.author-description').html(authorDesc);
 
-var socialLinks = '';
+let socialLinks = '';
 for (const socialLink of socialLinksArray) {
     socialLinks += `<li class="social-link-item mr-3 mr-md-0 mt-md-5 text-center pointer">
                         <a href="${socialLink.link}" target="_blank">
@@ -68,7 +68,7 @@ for (const socialLink of socialLinksArray) {
 }
 $('.social-links').html(socialLinks);
 
-var curtainNavLinks = '';
+let curtainNavLinks = '';
 for (const link of navLinksArray) {
     curtainNavLinks += `<li class="menu-curtain-list-item my-3">
                             <a class="text-black transition line-effect d-inline-flex justify-content-center" href="#0">`;
@@ -80,7 +80,7 @@ for (const link of navLinksArray) {
 }
 $('.menu-curtain-list').html(curtainNavLinks);
 
-var navigationDots = '';
+let navigationDots = '';
 for (let i = 0; i < panels.length; i++) {
     let activeClass = i === 0 ? 'active' : '';
     navigationDots += '<li class="navigation-dots list-inline-item rounded-circle pointer mx-1 transition white-border '+activeClass+'"></li>';
@@ -97,15 +97,15 @@ window.onload = function () {
 
 $(document).ready(function () {
 
-    var curtainHideTimeout;
-    var curtain = $('.menu-curtain');
-    var curtainList = $('.menu-curtain-list-item');
-    var holder = document.getElementById('holder');
-    var dots = $('.navigation-dots');
-    var projDots = $('.project-navigation-dots');
-    var projItems = $('.project-items');
-    var curIndex = 0, projCurIndex = 0;
-    var canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
+    let curtainHideTimeout;
+    let curtain = $('.menu-curtain');
+    let curtainList = $('.menu-curtain-list-item');
+    let holder = document.getElementById('holder');
+    let dots = $('.navigation-dots');
+    let projDots = $('.project-navigation-dots');
+    let projItems = $('.project-items');
+    let curIndex = 0, projCurIndex = 0;
+    let canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
 
     particlesJS('particles-js', {
         "particles": {
@@ -243,7 +243,7 @@ $(document).ready(function () {
 
     $(window).on('mousewheel DOMMouseScroll', function (e) {
         // if you scroll up original value will be negative and scroll down will be positive,
-        var delta = -e.originalEvent.wheelDelta;
+        let delta = -e.originalEvent.wheelDelta;
         if (delta > 40 && canScroll) { // scroll up
             canScroll = false;
             clearTimeout(scrollController);
@@ -278,7 +278,7 @@ $(document).ready(function () {
     });
 
     // initialize hammer instance with element
-    var hammer = new Hammer.Manager(holder, {
+    let hammer = new Hammer.Manager(holder, {
         domEvents: true,
         recognizers : [
             [Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]
@@ -295,7 +295,7 @@ $(document).ready(function () {
     // console.log(panels.height() + panels.offset().top)
 
     dots.click(function () {
-        var dotsIndex = dots.index($(this));
+        let dotsIndex = dots.index($(this));
         curIndex = dotsIndex;
         dotsFade(curIndex);
         panelsFade(curIndex);
@@ -311,7 +311,7 @@ $(document).ready(function () {
     }
 
     projDots.click(function () {
-        var projDotindex = projDots.index($(this));
+        let projDotindex = projDots.index($(this));
         projCurIndex = projDotindex;
         projDotsFade(projCurIndex);
         projItemsFade(projCurIndex);
