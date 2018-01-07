@@ -99,8 +99,8 @@ $('.proceed-btn').click(() => {
 
 window.onload = () => {
     setTimeout(() => {
-        $('.preloader, .preloader *').fadeOut(800, () => {
-            $('.preloader').removeClass('d-flex');
+        $('.preloader *').fadeOut(() => {
+            $('.preloader').addClass('menu-curtain-close');
         });
     }, 1500);
 };
