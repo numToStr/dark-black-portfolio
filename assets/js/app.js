@@ -27,7 +27,8 @@ const socialLinksArray = [
 ]
 const navLinksArray = ['home', 'about', 'projects', 'gallery', 'contact'];
 const panels = $('.panel');
-
+let curIndex = 0, projCurIndex = 0;
+let canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
 // common ui letiables == ends ==============
 
 let tempAuthorName = '';
@@ -87,6 +88,15 @@ for (let i = 0; i < panels.length; i++) {
 }
 $('.navigation-dots-list').html(navigationDots);
 
+$('.proceed-btn').click(() => {
+    if (curIndex < (navLinksArray.length-1)) {
+        curIndex++;
+        proceedBtn(curIndex);
+        panelsFade(curIndex);
+        dotsFade(curIndex)
+    }
+})
+
 window.onload = () => {
     setTimeout(() => {
         $('.preloader, .preloader *').fadeOut(800, () => {
@@ -95,17 +105,15 @@ window.onload = () => {
     }, 1500);
 };
 
-$(document).ready(() => {
+let curtainHideTimeout;
+let curtain = $('.menu-curtain');
+let curtainList = $('.menu-curtain-list-item');
+let holder = document.getElementById('holder');
+let dots = $('.navigation-dots');
+let projDots = $('.project-navigation-dots');
+let projItems = $('.project-items');
 
-    let curtainHideTimeout;
-    let curtain = $('.menu-curtain');
-    let curtainList = $('.menu-curtain-list-item');
-    let holder = document.getElementById('holder');
-    let dots = $('.navigation-dots');
-    let projDots = $('.project-navigation-dots');
-    let projItems = $('.project-items');
-    let curIndex = 0, projCurIndex = 0;
-    let canScroll = true, scrollController = null, scrollTimeoutDuration = 800;
+$(document).ready(() => {
 
     particlesJS('particles-js', {
         "particles": {
@@ -254,6 +262,7 @@ $(document).ready(() => {
             if (curIndex < (panels.length - 1)) {
                 curIndex+=1;
                 console.log('up : ', curIndex);
+                proceedBtn(curIndex);
                 dotsFade(curIndex);
                 panelsFade(curIndex);
             // } else {
@@ -271,6 +280,7 @@ $(document).ready(() => {
             if (curIndex >= 1) {
                 curIndex-=1;
                 console.log('down : ', curIndex);
+                proceedBtn(curIndex);
                 dotsFade(curIndex);
                 panelsFade(curIndex);
             }
@@ -297,18 +307,10 @@ $(document).ready(() => {
     dots.click(function () {
         let dotsIndex = dots.index($(this));
         curIndex = dotsIndex;
+        proceedBtn(curIndex);
         dotsFade(curIndex);
         panelsFade(curIndex);
     })
-
-    function panelsFade(index) {
-        panels.removeClass('is-show');
-        panels.eq(index).addClass('is-show');
-    }
-    function dotsFade(index) {
-        dots.removeClass('active');
-        dots.eq(index).addClass('active');
-    }
 
     projDots.click(function () {
         let projDotindex = projDots.index($(this));
@@ -331,13 +333,39 @@ $(document).ready(() => {
             projItemsFade(projCurIndex);
         }
     })
-
-    function projDotsFade(index) {
-        projDots.removeClass('active');
-        projDots.eq(index).addClass('active');
-    }
-    function projItemsFade(index) {
-        projItems.removeClass('is-show');
-        projItems.eq(index).addClass('is-show');
-    }
 })
+
+// functions ======================
+
+function panelsFade(index) {
+    panels.removeClass('is-show');
+    panels.eq(index).addClass('is-show');
+}
+function dotsFade(index) {
+    dots.removeClass('active');
+    dots.eq(index).addClass('active');
+}
+function projDotsFade(index) {
+    projDots.removeClass('active');
+    projDots.eq(index).addClass('active');
+}
+function projItemsFade(index) {
+    projItems.removeClass('is-show');
+    projItems.eq(index).addClass('is-show');
+}
+function proceedBtn(index) {
+    if (index < (navLinksArray.length-1)) {
+        $('.proceed-btn-wrapper').animate({
+            opacity : 1
+        })
+        $('.proceed-btn-text')
+            .animate({ opacity : 0 }, function () {
+                $(this).text(navLinksArray[index+1])
+            })
+            .animate({ opacity : 1 });
+    } else {
+        $('.proceed-btn-wrapper').animate({
+            opacity : 0
+        })
+    }
+}
