@@ -520,14 +520,11 @@ a {
     }
 }
 // gallery
-.gallery {
-    .gallery-items {
-        height: 6.5rem;
-        @include md {
-            height: 16rem;
-        }
-    }
-}
+// .gallery {
+//     .gallery-items {
+//         height: 100%;
+//     }
+// }
 // projects 
 .projects {
     [class*='projects-controller'] {
