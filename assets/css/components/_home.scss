@@ -531,25 +531,67 @@ a {
         z-index: 15;
     }
     .projects-wrapper {
-        height: 15rem;
+        height: 16rem;
         @include md {
-            height: 25rem;
+            height: 26rem;
         }
         .projects-container {
             width: 75%;
             @include lg {
-                width: 50%;
+                width: 60%;
             }
             .project-items {
                 opacity: 0;
                 width: 140%;
-                height: 15rem;
+                height: 16rem;
+                @extend .transition;
                 @include sm {
                     width: 100%;
                 }
                 @include md {
                     width: 90%;
-                    height: 25rem;
+                    height: 26rem;
+                }
+                &:hover {
+                    .project-links {
+                        transform: translateY(-40%);
+                        .project-link-item {
+                            transform: scale(1.15);
+                        }
+                    }
+                    .project-text {
+                        opacity: 1;
+                    }
+                    background: red;
+                }
+                .project-links {
+                    @extend .transition;
+                    .project-link-item {
+                        height: 2rem;
+                        width: 2rem;
+                        @include md {
+                            height: 2.5rem;
+                            width: 2.5rem;  
+                        }
+                        svg {
+                            width: 1rem;
+                            @include md {
+                                width: 1.3rem;
+                            }
+                        }
+                        @extend .transition;
+                    }
+                }
+                .project-text {
+                    background: transparentize($color: $black, $amount: .5);
+                    opacity: 0;
+                    @extend .transition;
+                    small {
+                        font-size: .6rem;
+                        @include md {
+                            font-size: .8rem;
+                        }
+                    }
                 }
             }
         }
