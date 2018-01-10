@@ -531,7 +531,7 @@ a {
         z-index: 15;
     }
     .projects-wrapper {
-        height: 16rem;
+        height: 17rem;
         @include md {
             height: 26rem;
         }
@@ -543,7 +543,7 @@ a {
             .project-items {
                 opacity: 0;
                 width: 140%;
-                height: 16rem;
+                height: 17rem;
                 @extend .transition;
                 @include sm {
                     width: 100%;
