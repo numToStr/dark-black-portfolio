@@ -142,6 +142,12 @@ projectsArray.forEach((project, $i) => {
 });
 $('.projects-container').html(projects);
 
+let projectNavigationDots = '';
+for (let i = 0; i < projectsArray.length; i++) {
+    projectNavigationDots += `<li class="list-inline-item transition pointer rounded-circle white mx-2 project-navigation-dots ${i === 0 ? 'active' : ''}"></li>`
+}
+$('.project-navigation').html(projectNavigationDots);
+
 let navigationDots = '';
 for (let i = 0; i < panels.length; i++) {
     let activeClass = i === 0 ? 'active' : '';
