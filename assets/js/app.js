@@ -159,7 +159,7 @@ $('.proceed-btn').click(() => {
     if (curIndex < (navLinksArray.length-1)) {
         curIndex++;
         proceedBtn(curIndex);
-        panelsFade(curIndex);
+        panelsFade(curIndex, curIndex-1);
         dotsFade(curIndex)
     }
 })
@@ -331,7 +331,7 @@ $(document).ready(() => {
                 console.log('up : ', curIndex);
                 proceedBtn(curIndex);
                 dotsFade(curIndex);
-                panelsFade(curIndex);
+                panelsFade(curIndex, curIndex-1);
             // } else {
             //     curIndex = 0;
             //     dotsFade(curIndex);
@@ -349,7 +349,7 @@ $(document).ready(() => {
                 console.log('down : ', curIndex);
                 proceedBtn(curIndex);
                 dotsFade(curIndex);
-                panelsFade(curIndex);
+                panelsFade(curIndex, curIndex+1);
             }
         }
     });
@@ -373,10 +373,11 @@ $(document).ready(() => {
 
     dots.click(function () {
         let dotsIndex = dots.index($(this));
+        panelsFade(dotsIndex, curIndex);
+        
         curIndex = dotsIndex;
         proceedBtn(curIndex);
         dotsFade(curIndex);
-        panelsFade(curIndex);
     })
 
     projDots.click(function () {
@@ -404,9 +405,11 @@ $(document).ready(() => {
 
 // functions ======================
 
-function panelsFade(index) {
-    panels.removeClass('is-show');
-    panels.eq(index).addClass('is-show');
+function panelsFade(next,prev) {
+    // panels.removeClass('is-show');
+
+    panels.eq(prev).css('background','red').removeClass('is-go-down-and-grow').addClass('is-panel-show is-shrink-and-go-up');
+    panels.eq(next).css('background','blue').removeClass('is-panel-show is-shrink-and-go-up').addClass('is-go-down-and-grow');
 }
 function dotsFade(index) {
     dots.removeClass('active');

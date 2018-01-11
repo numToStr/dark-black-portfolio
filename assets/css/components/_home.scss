@@ -278,13 +278,49 @@ a {
   }
 }
 // panels =============
+#holder {
+    overflow-y: hidden;
+}
 .panel {
+    transform: translateY(-200%);
     opacity: 0;
     overflow: auto;
+    &.is-panel-show {
+        transform: translateY(0);
+        opacity: 1 !important;
+        z-index: 10 !important;
+    }
 }
 .is-show {
     opacity: 1 !important;
     z-index: 10 !important;
+}
+.is-shrink-and-go-up {
+    @extend .transition;
+    animation: is-shrink-go-up 2s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+    @keyframes is-shrink-go-up {
+        30% {
+            transform: scale(.8);
+        }
+        100% {
+            transform: scale(.8) translateY(-200%);
+        }
+    }
+}
+.is-go-down-and-grow {
+    @extend .transition;
+    animation: is-go-down-grow 2s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+    transform: scale(.8) translateY(-200%);
+    opacity: 1 !important;
+    z-index: 10 !important;
+    @keyframes is-go-down-grow {
+        30% {
+            transform: scale(.8) translateY(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
 }
 // intro ==============
 .author-title {
