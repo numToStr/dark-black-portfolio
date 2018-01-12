@@ -89,7 +89,7 @@ $('.author-description').html(authorDesc);
 
 let socialLinks = '';
 for (const socialLink of socialLinksArray) {
-    socialLinks += `<li class="social-link-item mr-3 mr-md-0 mt-md-5 text-center pointer">
+    socialLinks += `<li class="social-link-item mr-4 mr-md-0 mt-md-5 text-center pointer">
                         <a href="${socialLink.link}" target="_blank">
                             ${socialLink.icon}
                         </a>

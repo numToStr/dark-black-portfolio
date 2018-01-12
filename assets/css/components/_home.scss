@@ -379,14 +379,12 @@ a {
     ul li svg {
         width: .85rem;
         @include sm {
-            width: 1rem;
+            width: .9rem;
         }
     }
     .liner {
-        display: none;
         @include md {
-            display: block;
-            transform: rotate(90deg) scaleX(7) translateX(-50%);
+            transform: rotate(90deg) scaleX(12) translateX(-50%);
         }
     }
 }
@@ -500,6 +498,7 @@ a {
 .proceed-btn-wrapper {
     font-size: .8rem;
     letter-spacing: .2rem;
+    text-shadow: 0 0 .3rem $black;
     @include md {
         font-size: initial;
         letter-spacing: .3rem;
@@ -518,7 +517,7 @@ a {
     padding: .9rem;
     border-radius: 50%;
     background: $white;
-    box-shadow: 0 0 1rem $black;
+    box-shadow: 0 0 .5rem $black;
     @include md {
         padding: 1.2rem;
     }
