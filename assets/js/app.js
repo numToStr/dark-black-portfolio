@@ -406,10 +406,8 @@ $(document).ready(() => {
 // functions ======================
 
 function panelsFade(next,prev) {
-    // panels.removeClass('is-show');
-
-    panels.eq(prev).css('background','red').removeClass('is-go-down-and-grow').addClass('is-panel-show is-shrink-and-go-up');
-    panels.eq(next).css('background','blue').removeClass('is-panel-show is-shrink-and-go-up').addClass('is-go-down-and-grow');
+    panels.eq(prev).removeClass('is-go-down-and-grow').addClass('is-panel-show is-shrink-and-go-up');
+    panels.eq(next).removeClass('is-panel-show is-shrink-and-go-up').addClass('is-go-down-and-grow');
 }
 function dotsFade(index) {
     dots.removeClass('active');

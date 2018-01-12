@@ -300,6 +300,7 @@ a {
     animation: is-shrink-go-up 2s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
     @keyframes is-shrink-go-up {
         30% {
+            background: $black;
             transform: scale(.8);
         }
         100% {
@@ -315,9 +316,11 @@ a {
     z-index: 10 !important;
     @keyframes is-go-down-grow {
         30% {
+            background: $black;
             transform: scale(.8) translateY(0);
         }
         100% {
+            background: transparent;
             transform: scale(1);
         }
     }
