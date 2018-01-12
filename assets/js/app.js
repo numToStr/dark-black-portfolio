@@ -34,7 +34,7 @@ const projectsArray = [
         code: 'https://github.com/vkasraj/decode'
     },
     {
-        desc: 'single page scrollable portfolio template',
+        desc: 'single page parallax portfolio',
         img: './assets/images/landing.png',
         link: 'https://vkasraj.github.io/dark-black-portfolio',
         code: 'https://github.com/vkasraj/dark-black-portfolio'
@@ -115,11 +115,11 @@ projectsArray.forEach((project, $i) => {
                     <div class="project-info-wrapper position-absolute w-100" style="bottom:5%;">
                         ${
                             project['desc'] ? 
-                            `<div class="project-text text-center text-uppercase letter-spacing-2 py-2">
+                            `<div class="project-text text-center text-uppercase letter-spacing-2 py-half py-md-2">
                                 <small>${project['desc']}</small>
                             </div>` : ''
                         }
-                        <div class="project-links text-center d-flex justify-content-center mt-5">
+                        <div class="project-links text-center d-flex justify-content-center mt-4 mt-md-5">
                             ${
                                 project['link'] ? 
                                 `<a href="${project['link']}" target="_blank">

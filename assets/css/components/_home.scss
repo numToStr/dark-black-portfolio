@@ -518,6 +518,7 @@ a {
     padding: .9rem;
     border-radius: 50%;
     background: $white;
+    box-shadow: 0 0 1rem $black;
     @include md {
         padding: 1.2rem;
     }
