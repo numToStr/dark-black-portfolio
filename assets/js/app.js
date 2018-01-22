@@ -326,17 +326,8 @@ $(document).ready(() => {
                 canScroll = true;
             }, scrollTimeoutDuration);
             
-            if (curIndex < (panels.length - 1)) {
-                curIndex+=1;
-                console.log('up : ', curIndex);
-                proceedBtn(curIndex);
-                dotsFade(curIndex);
-                panelsFade(curIndex, curIndex-1);
-            // } else {
-            //     curIndex = 0;
-            //     dotsFade(curIndex);
-            //     panelsFade(curIndex);
-            }
+            goUpOrDown('up');
+
         } else if (delta < -40 && canScroll) { // scroll down
             canScroll = false;
             clearTimeout(scrollController);
@@ -344,32 +335,10 @@ $(document).ready(() => {
                 canScroll = true;
             }, scrollTimeoutDuration);
             
-            if (curIndex >= 1) {
-                curIndex-=1;
-                console.log('down : ', curIndex);
-                proceedBtn(curIndex);
-                dotsFade(curIndex);
-                panelsFade(curIndex, curIndex+1);
-            }
+            goUpOrDown('down');
+
         }
     });
-
-    // initialize hammer instance with element
-    let hammer = new Hammer.Manager(holder, {
-        domEvents: true,
-        recognizers : [
-            [Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]
-        ]
-    });
-
-    hammer.on("swipeup", e => {
-        console.log('swipeup')
-    });
-    hammer.on("swipedown", e => {
-        console.log('swipedown')
-    });
-
-    // console.log(panels.height() + panels.offset().top)
 
     dots.click(function () {
         let dotsIndex = dots.index($(this));
@@ -403,6 +372,26 @@ $(document).ready(() => {
     })
 })
 
+// initialize hammer instance with element
+let hammer = new Hammer.Manager(holder, {
+    touchAction: 'auto',
+    domEvents: false,
+    // this is require when it is not working on mobile devices
+    inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput,
+    recognizers : [
+        [Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]
+    ]
+});
+
+hammer.on("swipeup", e => {
+    e.preventDefault();
+    goUpOrDown('up');
+});
+hammer.on("swipedown", e => {
+    e.preventDefault();
+    goUpOrDown('down');
+});
+
 // functions ======================
 
 function panelsFade(next,prev) {
@@ -435,5 +424,26 @@ function proceedBtn(index) {
         $('.proceed-btn-wrapper').animate({
             opacity : 0
         })
+    }
+}
+function goUpOrDown(direction) {
+    if (direction === 'up') {
+        if (curIndex < (panels.length - 1)) {
+            curIndex+=1;
+            proceedBtn(curIndex);
+            dotsFade(curIndex);
+            panelsFade(curIndex, curIndex-1);
+        // } else {
+        //     curIndex = 0;
+        //     dotsFade(curIndex);
+        //     panelsFade(curIndex);
+        }
+    } else if (direction === 'down') {
+        if (curIndex >= 1) {
+            curIndex-=1;
+            proceedBtn(curIndex);
+            dotsFade(curIndex);
+            panelsFade(curIndex, curIndex+1);
+        }
     }
 }
