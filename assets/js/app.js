@@ -68,7 +68,7 @@ if (glitchEffect) {
             if (authorLetter === ' ') {
                 tempAuthorName += '<span class="mx-1 mx-md-3 px-sm-1"></span>';
             } else {
-                tempAuthorName += '<span class="mx-1 mx-md-2 px-1">'+authorLetter+'</span>';
+                tempAuthorName += '<span class="mx-1 mx-md-2 px-sm-1">'+authorLetter+'</span>';
             }
         }
         tempAuthorName += '</p>';
