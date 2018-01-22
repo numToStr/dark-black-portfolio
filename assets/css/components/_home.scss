@@ -359,7 +359,7 @@ a {
 }
 .become-cross {
     .hamburger-line:nth-child(1) {
-        transform: translateY(210%) rotate(45deg);
+        transform: translateY(200%) rotate(45deg);
         @include sm {
             transform: translateY(300%) rotate(45deg);
         }
@@ -369,7 +369,7 @@ a {
         opacity: 0;
     }
     .hamburger-line:nth-child(3) {
-        transform: translateY(-210%) rotate(-45deg);
+        transform: translateY(-200%) rotate(-45deg);
         @include sm {
             transform: translateY(-300%) rotate(-45deg);
         }
