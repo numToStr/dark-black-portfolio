@@ -1,3 +1,7 @@
+body {
+    // this is added for preventing pull-down-to-refresh in chrome on any other browser
+    overflow-y: hidden;
+}
 a {
     text-decoration: unset !important;
 }
