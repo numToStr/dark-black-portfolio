@@ -1,684 +1,684 @@
 body {
-  // this is added for preventing pull-down-to-refresh in chrome on any other browser
-  overflow-y: hidden;
+	// this is added for preventing pull-down-to-refresh in chrome on any other browser
+	overflow-y: hidden;
 }
 a {
-  text-decoration: unset !important;
+	text-decoration: unset !important;
 }
 .black {
-  background: $black;
+	background: $black;
 }
 .white {
-  background: $white;
+	background: $white;
 }
 .dark {
-  background: $dark;
+	background: $dark;
 }
 .pointer {
-  cursor: pointer;
+	cursor: pointer;
 }
 .transition {
-  transition: 0.4s cubic-bezier(0.57, 0.04, 0, 0.97);
+	transition: 0.4s cubic-bezier(0.57, 0.04, 0, 0.97);
 }
 .flex-grow {
-  flex-grow: 1 !important;
+	flex-grow: 1 !important;
 }
 .flex-basis-0 {
-  flex-basis: initial !important;
+	flex-basis: initial !important;
 }
 .flex-basis-md-100 {
-  @include md {
-    flex-basis: 100%;
-  }
+	@include md {
+		flex-basis: 100%;
+	}
 }
 .display-dyna {
-  font-size: 1.8rem;
-  font-weight: 300;
-  @include sm {
-    font-size: 2rem;
-  }
-  @include md {
-    font-size: 3rem;
-  }
+	font-size: 1.8rem;
+	font-weight: 300;
+	@include sm {
+		font-size: 2rem;
+	}
+	@include md {
+		font-size: 3rem;
+	}
 }
 .line-height-0 {
-  line-height: 0;
+	line-height: 0;
 }
 // prelaoder =========================
 .preloader {
-  z-index: 1000;
-  // .preloader-text {
-  //     .preloader-text-item {
-  //         opacity: 0;
-  //         animation: welcome 5s cubic-bezier(0.78, 0.12, 0.45, 1.46) forwards;
-  //         @keyframes welcome {
-  //             90% {
-  //                 opacity: 1;
-  //             }
-  //             100% {
-  //                 opacity: 1;
-  //                 transform: translate(0,0);
-  //             }
-  //         }
-  //         &:nth-child(1) {
-  //             transform: translate(-1.5rem, 8rem);
-  //         }
-  //         &:nth-child(2) {
-  //             transform: translate(2.5rem, -10rem);
-  //         }
-  //         &:nth-child(3) {
-  //             transform: translate(-7rem, -2rem);
-  //         }
-  //         &:nth-child(4) {
-  //             transform: translate(-.5rem, 5rem);
-  //         }
-  //         &:nth-child(5) {
-  //             transform: translate(2rem, -5rem);
-  //         }
-  //         &:nth-child(6) {
-  //             transform: translate(-1.5rem, 15rem);
-  //         }
-  //         &:nth-child(7) {
-  //             transform: translate(1.5rem, 3rem);
-  //         }
-  //     }
-  // }
-  .beam {
-    opacity: 1;
-    animation: beam 1s ease-in-out infinite;
-    @keyframes beam {
-      100% {
-        opacity: 0;
-        transform: scale(10);
-      }
-    }
-    &.beam-two {
-      animation-delay: 0.5s;
-    }
-  }
+	z-index: 1000;
+	// .preloader-text {
+	//     .preloader-text-item {
+	//         opacity: 0;
+	//         animation: welcome 5s cubic-bezier(0.78, 0.12, 0.45, 1.46) forwards;
+	//         @keyframes welcome {
+	//             90% {
+	//                 opacity: 1;
+	//             }
+	//             100% {
+	//                 opacity: 1;
+	//                 transform: translate(0,0);
+	//             }
+	//         }
+	//         &:nth-child(1) {
+	//             transform: translate(-1.5rem, 8rem);
+	//         }
+	//         &:nth-child(2) {
+	//             transform: translate(2.5rem, -10rem);
+	//         }
+	//         &:nth-child(3) {
+	//             transform: translate(-7rem, -2rem);
+	//         }
+	//         &:nth-child(4) {
+	//             transform: translate(-.5rem, 5rem);
+	//         }
+	//         &:nth-child(5) {
+	//             transform: translate(2rem, -5rem);
+	//         }
+	//         &:nth-child(6) {
+	//             transform: translate(-1.5rem, 15rem);
+	//         }
+	//         &:nth-child(7) {
+	//             transform: translate(1.5rem, 3rem);
+	//         }
+	//     }
+	// }
+	.beam {
+		opacity: 1;
+		animation: beam 1s ease-in-out infinite;
+		@keyframes beam {
+			100% {
+				opacity: 0;
+				transform: scale(10);
+			}
+		}
+		&.beam-two {
+			animation-delay: 0.5s;
+		}
+	}
 }
 // glitch-effect =====================
 .glitch-effect-neutral {
-  animation: glitch-nuetral 2.5s infinite;
+	animation: glitch-nuetral 2.5s infinite;
 }
 .glitch-effect-blue {
-  color: #5af0d4;
-  animation: glitch-blue 2.5s infinite;
+	color: #5af0d4;
+	animation: glitch-blue 2.5s infinite;
 }
 .glitch-effect-red {
-  color: #f76d6d;
-  animation: glitch-red 2.5s infinite;
+	color: #f76d6d;
+	animation: glitch-red 2.5s infinite;
 }
 @keyframes glitch-neutral {
-  0% {
-    transform: none;
-    opacity: 1;
-  }
-  7% {
-    transform: skew(-0.5deg, -0.9deg);
-    opacity: 0.75;
-  }
-  10% {
-    transform: none;
-    opacity: 1;
-  }
-  27% {
-    transform: none;
-    opacity: 1;
-  }
-  30% {
-    transform: skew(0.8deg, -0.1deg);
-    opacity: 0.75;
-  }
-  35% {
-    transform: none;
-    opacity: 1;
-  }
-  52% {
-    transform: none;
-    opacity: 1;
-  }
-  55% {
-    transform: skew(-1deg, 0.2deg);
-    opacity: 0.75;
-  }
-  50% {
-    transform: none;
-    opacity: 1;
-  }
-  72% {
-    transform: none;
-    opacity: 1;
-  }
-  75% {
-    transform: skew(0.4deg, 1deg);
-    opacity: 0.75;
-  }
-  80% {
-    transform: none;
-    opacity: 1;
-  }
-  100% {
-    transform: none;
-    opacity: 1;
-  }
+	0% {
+		transform: none;
+		opacity: 1;
+	}
+	7% {
+		transform: skew(-0.5deg, -0.9deg);
+		opacity: 0.75;
+	}
+	10% {
+		transform: none;
+		opacity: 1;
+	}
+	27% {
+		transform: none;
+		opacity: 1;
+	}
+	30% {
+		transform: skew(0.8deg, -0.1deg);
+		opacity: 0.75;
+	}
+	35% {
+		transform: none;
+		opacity: 1;
+	}
+	52% {
+		transform: none;
+		opacity: 1;
+	}
+	55% {
+		transform: skew(-1deg, 0.2deg);
+		opacity: 0.75;
+	}
+	50% {
+		transform: none;
+		opacity: 1;
+	}
+	72% {
+		transform: none;
+		opacity: 1;
+	}
+	75% {
+		transform: skew(0.4deg, 1deg);
+		opacity: 0.75;
+	}
+	80% {
+		transform: none;
+		opacity: 1;
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
 }
 
 @keyframes glitch-blue {
-  0% {
-    transform: none;
-    opacity: 0.25;
-  }
-  7% {
-    transform: translate(-2px, -3px);
-    opacity: 0.5;
-  }
-  10% {
-    transform: none;
-    opacity: 0.25;
-  }
-  27% {
-    transform: none;
-    opacity: 0.25;
-  }
-  30% {
-    transform: translate(-5px, -2px);
-    opacity: 0.5;
-  }
-  35% {
-    transform: none;
-    opacity: 0.25;
-  }
-  52% {
-    transform: none;
-    opacity: 0.25;
-  }
-  55% {
-    transform: translate(-5px, -1px);
-    opacity: 0.5;
-  }
-  50% {
-    transform: none;
-    opacity: 0.25;
-  }
-  72% {
-    transform: none;
-    opacity: 0.25;
-  }
-  75% {
-    transform: translate(-2px, -6px);
-    opacity: 0.5;
-  }
-  80% {
-    transform: none;
-    opacity: 0.25;
-  }
-  100% {
-    transform: none;
-    opacity: 0.25;
-  }
+	0% {
+		transform: none;
+		opacity: 0.25;
+	}
+	7% {
+		transform: translate(-2px, -3px);
+		opacity: 0.5;
+	}
+	10% {
+		transform: none;
+		opacity: 0.25;
+	}
+	27% {
+		transform: none;
+		opacity: 0.25;
+	}
+	30% {
+		transform: translate(-5px, -2px);
+		opacity: 0.5;
+	}
+	35% {
+		transform: none;
+		opacity: 0.25;
+	}
+	52% {
+		transform: none;
+		opacity: 0.25;
+	}
+	55% {
+		transform: translate(-5px, -1px);
+		opacity: 0.5;
+	}
+	50% {
+		transform: none;
+		opacity: 0.25;
+	}
+	72% {
+		transform: none;
+		opacity: 0.25;
+	}
+	75% {
+		transform: translate(-2px, -6px);
+		opacity: 0.5;
+	}
+	80% {
+		transform: none;
+		opacity: 0.25;
+	}
+	100% {
+		transform: none;
+		opacity: 0.25;
+	}
 }
 
 @keyframes glitch-red {
-  0% {
-    transform: none;
-    opacity: 0.25;
-  }
-  7% {
-    transform: translate(2px, 3px);
-    opacity: 0.5;
-  }
-  10% {
-    transform: none;
-    opacity: 0.25;
-  }
-  27% {
-    transform: none;
-    opacity: 0.25;
-  }
-  30% {
-    transform: translate(5px, 2px);
-    opacity: 0.5;
-  }
-  35% {
-    transform: none;
-    opacity: 0.25;
-  }
-  52% {
-    transform: none;
-    opacity: 0.25;
-  }
-  55% {
-    transform: translate(5px, 1px);
-    opacity: 0.5;
-  }
-  50% {
-    transform: none;
-    opacity: 0.25;
-  }
-  72% {
-    transform: none;
-    opacity: 0.25;
-  }
-  75% {
-    transform: translate(2px, 6px);
-    opacity: 0.5;
-  }
-  80% {
-    transform: none;
-    opacity: 0.25;
-  }
-  100% {
-    transform: none;
-    opacity: 0.25;
-  }
+	0% {
+		transform: none;
+		opacity: 0.25;
+	}
+	7% {
+		transform: translate(2px, 3px);
+		opacity: 0.5;
+	}
+	10% {
+		transform: none;
+		opacity: 0.25;
+	}
+	27% {
+		transform: none;
+		opacity: 0.25;
+	}
+	30% {
+		transform: translate(5px, 2px);
+		opacity: 0.5;
+	}
+	35% {
+		transform: none;
+		opacity: 0.25;
+	}
+	52% {
+		transform: none;
+		opacity: 0.25;
+	}
+	55% {
+		transform: translate(5px, 1px);
+		opacity: 0.5;
+	}
+	50% {
+		transform: none;
+		opacity: 0.25;
+	}
+	72% {
+		transform: none;
+		opacity: 0.25;
+	}
+	75% {
+		transform: translate(2px, 6px);
+		opacity: 0.5;
+	}
+	80% {
+		transform: none;
+		opacity: 0.25;
+	}
+	100% {
+		transform: none;
+		opacity: 0.25;
+	}
 }
 // panels =============
 #holder {
-  overflow-y: hidden;
+	overflow-y: hidden;
 }
 .panel {
-  transform: translateY(-200%);
-  opacity: 0;
-  overflow: auto;
-  &.is-panel-show {
-    transform: translateY(0);
-    opacity: 1 !important;
-    z-index: 10 !important;
-  }
+	transform: translateY(-200%);
+	opacity: 0;
+	overflow: auto;
+	&.is-panel-show {
+		transform: translateY(0);
+		opacity: 1 !important;
+		z-index: 10 !important;
+	}
 }
 .is-show {
-  opacity: 1 !important;
-  z-index: 10 !important;
+	opacity: 1 !important;
+	z-index: 10 !important;
 }
 .is-shrink-and-go-up {
-  @extend .transition;
-  animation: is-shrink-go-up 2s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
-  @keyframes is-shrink-go-up {
-    30% {
-      background: $black;
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(0.8) translateY(-200%);
-    }
-  }
+	@extend .transition;
+	animation: is-shrink-go-up 2s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+	@keyframes is-shrink-go-up {
+		30% {
+			background: $black;
+			transform: scale(0.8);
+		}
+		100% {
+			transform: scale(0.8) translateY(-200%);
+		}
+	}
 }
 .is-go-down-and-grow {
-  @extend .transition;
-  animation: is-go-down-grow 2s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
-  transform: scale(0.8) translateY(-200%);
-  opacity: 1 !important;
-  z-index: 10 !important;
-  @keyframes is-go-down-grow {
-    30% {
-      background: $black;
-      transform: scale(0.8) translateY(0);
-    }
-    100% {
-      background: transparent;
-      transform: scale(1);
-    }
-  }
+	@extend .transition;
+	animation: is-go-down-grow 2s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+	transform: scale(0.8) translateY(-200%);
+	opacity: 1 !important;
+	z-index: 10 !important;
+	@keyframes is-go-down-grow {
+		30% {
+			background: $black;
+			transform: scale(0.8) translateY(0);
+		}
+		100% {
+			background: transparent;
+			transform: scale(1);
+		}
+	}
 }
 // intro ==============
 .author-title {
-  font-size: 2.5rem;
-  @include sm {
-    font-size: 3.5rem;
-  }
-  @include md {
-    font-size: 5.5rem;
-  }
-  @include lg {
-    font-size: 6.25rem;
-  }
+	font-size: 2.5rem;
+	@include sm {
+		font-size: 3.5rem;
+	}
+	@include md {
+		font-size: 5.5rem;
+	}
+	@include lg {
+		font-size: 6.25rem;
+	}
 }
 .author-description {
-  font-size: 1.2rem;
-  letter-spacing: 0.18rem;
-  @include sm {
-    font-size: 1.3rem;
-    letter-spacing: 0.5rem;
-  }
-  @include md {
-    font-size: 1.5rem;
-    letter-spacing: 0.8rem;
-  }
+	font-size: 1.2rem;
+	letter-spacing: 0.18rem;
+	@include sm {
+		font-size: 1.3rem;
+		letter-spacing: 0.5rem;
+	}
+	@include md {
+		font-size: 1.5rem;
+		letter-spacing: 0.8rem;
+	}
 }
 
 // nav and header ==============
 .hamburger-menu {
-  width: 12%;
-  @include sm {
-    width: 8%;
-  }
-  @include md {
-    width: 90%;
-  }
+	width: 12%;
+	@include sm {
+		width: 8%;
+	}
+	@include md {
+		width: 90%;
+	}
 }
 .become-cross {
-  .hamburger-line:nth-child(1) {
-    transform: translateY(200%) rotate(45deg);
-    @include sm {
-      transform: translateY(300%) rotate(45deg);
-    }
-  }
-  .hamburger-line:nth-child(2) {
-    visibility: hidden;
-    opacity: 0;
-  }
-  .hamburger-line:nth-child(3) {
-    transform: translateY(-200%) rotate(-45deg);
-    @include sm {
-      transform: translateY(-300%) rotate(-45deg);
-    }
-  }
+	.hamburger-line:nth-child(1) {
+		transform: translateY(200%) rotate(45deg);
+		@include sm {
+			transform: translateY(300%) rotate(45deg);
+		}
+	}
+	.hamburger-line:nth-child(2) {
+		visibility: hidden;
+		opacity: 0;
+	}
+	.hamburger-line:nth-child(3) {
+		transform: translateY(-200%) rotate(-45deg);
+		@include sm {
+			transform: translateY(-300%) rotate(-45deg);
+		}
+	}
 }
 .social-wrapper {
-  ul li svg {
-    width: 0.85rem;
-    @include sm {
-      width: 0.9rem;
-    }
-  }
-  .liner {
-    @include md {
-      transform: rotate(90deg) scaleX(12) translateX(-50%);
-    }
-  }
+	ul li svg {
+		width: 0.85rem;
+		@include sm {
+			width: 1rem;
+		}
+	}
+	.liner {
+		@include md {
+			transform: rotate(90deg) scaleX(12) translateX(-50%);
+		}
+	}
 }
 .menu-curtain {
-  width: 0%;
-  z-index: 500;
+	width: 0%;
+	z-index: 500;
 }
 .menu-curtain-close {
-  animation: stretchIn 1s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
-  @keyframes stretchIn {
-    0% {
-      width: 100%;
-    }
-    100% {
-      width: 0%;
-    }
-  }
+	animation: stretchIn 1s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+	@keyframes stretchIn {
+		0% {
+			width: 100%;
+		}
+		100% {
+			width: 0%;
+		}
+	}
 }
 .menu-curtain-open {
-  animation: stretchAway 1s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
-  @keyframes stretchAway {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
+	animation: stretchAway 1s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+	@keyframes stretchAway {
+		0% {
+			width: 0%;
+		}
+		100% {
+			width: 100%;
+		}
+	}
 }
 // cubic-bezier(0.57, 0.04, 0, 0.97)
 // cubic-bezier(0.94, 0.22, 0.07, 1.01)
 .line-effect {
-  position: relative;
-  &:hover::before {
-    content: "";
-    position: absolute;
-    padding: 0.05rem;
-    background: $dark;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0%;
-    animation: line-effect 0.5s ease-in-out forwards;
-    @keyframes line-effect {
-      100% {
-        width: 120%;
-      }
-    }
-  }
+	position: relative;
+	&:hover::before {
+		content: "";
+		position: absolute;
+		padding: 0.05rem;
+		background: $dark;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 0%;
+		animation: line-effect 0.5s ease-in-out forwards;
+		@keyframes line-effect {
+			100% {
+				width: 120%;
+			}
+		}
+	}
 }
 .menu-curtain-list-item {
-  p {
-    opacity: 0;
-    &:hover {
-      color: red;
-    }
-  }
+	p {
+		opacity: 0;
+		&:hover {
+			color: red;
+		}
+	}
 }
 .menu-curtain-list-item-go-down p {
-  transform: translateY(-120%);
-  opacity: 0;
-  // here 31 is the total count of words in individaul links in menu
-  @for $i from 1 through 31 {
-    &:nth-child(#{$i}) {
-      animation: fadeDown 1.5s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
-      animation-delay: ($i) * 0.085s;
-    }
-  }
-  @keyframes fadeDown {
-    100% {
-      transform: translateY(0%);
-      opacity: 1;
-    }
-  }
+	transform: translateY(-120%);
+	opacity: 0;
+	// here 31 is the total count of words in individaul links in menu
+	@for $i from 1 through 31 {
+		&:nth-child(#{$i}) {
+			animation: fadeDown 1.5s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+			animation-delay: ($i) * 0.085s;
+		}
+	}
+	@keyframes fadeDown {
+		100% {
+			transform: translateY(0%);
+			opacity: 1;
+		}
+	}
 }
 .menu-curtain-list-item-go-up p {
-  animation: fadeUp 0.75s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
-  transform: translateY(0%);
-  opacity: 1;
-  @keyframes fadeUp {
-    100% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-  }
+	animation: fadeUp 0.75s cubic-bezier(0.57, 0.04, 0, 0.97) forwards;
+	transform: translateY(0%);
+	opacity: 1;
+	@keyframes fadeUp {
+		100% {
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+	}
 }
 // footer ============
 .footer {
-  bottom: 1rem;
-  z-index: 50;
-  @include md {
-    bottom: 1.5rem;
-  }
+	bottom: 1rem;
+	z-index: 50;
+	@include md {
+		bottom: 1.5rem;
+	}
 }
 .navigation-dots {
-  padding: 0.22rem;
-  @include md {
-    padding: 0.3rem;
-  }
-  &.white-border {
-    border: 0.05rem solid $white;
-    &.active {
-      background: $white;
-    }
-    @include md {
-      border: 0.1rem solid $white;
-    }
-  }
-  &.black-border {
-    border: 0.05rem solid $black;
-    &.active {
-      background: $black;
-    }
-    @include md {
-      border: 0.1rem solid $black;
-    }
-  }
+	padding: 0.22rem;
+	@include md {
+		padding: 0.3rem;
+	}
+	&.white-border {
+		border: 0.05rem solid $white;
+		&.active {
+			background: $white;
+		}
+		@include md {
+			border: 0.1rem solid $white;
+		}
+	}
+	&.black-border {
+		border: 0.05rem solid $black;
+		&.active {
+			background: $black;
+		}
+		@include md {
+			border: 0.1rem solid $black;
+		}
+	}
 }
 .proceed-btn-wrapper {
-  font-size: 0.8rem;
-  letter-spacing: 0.2rem;
-  text-shadow: 0 0 0.3rem $black;
-  @include md {
-    font-size: initial;
-    letter-spacing: 0.3rem;
-  }
+	font-size: 0.8rem;
+	letter-spacing: 0.2rem;
+	text-shadow: 0 0 0.3rem $black;
+	@include md {
+		font-size: initial;
+		letter-spacing: 0.3rem;
+	}
 }
 @mixin before {
-  position: absolute;
-  content: "";
-  border-top: 0.4rem solid transparent;
-  border-bottom: 0.4rem solid transparent;
-  top: 50%;
-  left: 50%;
+	position: absolute;
+	content: "";
+	border-top: 0.4rem solid transparent;
+	border-bottom: 0.4rem solid transparent;
+	top: 50%;
+	left: 50%;
 }
 .circle-arrow {
-  position: relative;
-  padding: 0.9rem;
-  border-radius: 50%;
-  background: $white;
-  box-shadow: 0 0 0.5rem $black;
-  @include md {
-    padding: 1.2rem;
-  }
-  &.right {
-    &::before {
-      @include before;
-      border-left: 0.4rem solid $black;
-      transform: translate(-35%, -50%);
-    }
-  }
-  &.left {
-    &::before {
-      @include before;
-      border-right: 0.4rem solid $black;
-      transform: translate(-65%, -50%);
-    }
-  }
-  // &.white {
-  //     &::before {
-  //         @include before;
-  //         border-left: .4rem solid $black;
-  //     }
-  // }
-  // &.black {
-  //     &::before {
-  //         @include before;
-  //         border-left: .4rem solid $white;
-  //     }
-  // }
+	position: relative;
+	padding: 0.9rem;
+	border-radius: 50%;
+	background: $white;
+	box-shadow: 0 0 0.5rem $black;
+	@include md {
+		padding: 1.2rem;
+	}
+	&.right {
+		&::before {
+			@include before;
+			border-left: 0.4rem solid $black;
+			transform: translate(-35%, -50%);
+		}
+	}
+	&.left {
+		&::before {
+			@include before;
+			border-right: 0.4rem solid $black;
+			transform: translate(-65%, -50%);
+		}
+	}
+	// &.white {
+	//     &::before {
+	//         @include before;
+	//         border-left: .4rem solid $black;
+	//     }
+	// }
+	// &.black {
+	//     &::before {
+	//         @include before;
+	//         border-left: .4rem solid $white;
+	//     }
+	// }
 }
 //aboout ==========
 .about {
-  .about-body {
-    font-size: 1.2rem;
-    @include md {
-      font-size: 1.5rem;
-    }
-  }
+	.about-body {
+		font-size: 1.2rem;
+		@include md {
+			font-size: 1.5rem;
+		}
+	}
 }
 // gallery
 .gallery {
-  .gallery-more-btn {
-    z-index: 5;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+	.gallery-more-btn {
+		z-index: 5;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 // projects
 .projects {
-  [class*="projects-controller"] {
-    z-index: 15;
-  }
-  .projects-wrapper {
-    height: 17rem;
-    @include md {
-      height: 26rem;
-    }
-    .projects-container {
-      width: 75%;
-      @include lg {
-        width: 60%;
-      }
-      .project-items {
-        opacity: 0;
-        width: 140%;
-        height: 17rem;
-        @extend .transition;
-        @include sm {
-          width: 100%;
-        }
-        @include md {
-          width: 90%;
-          height: 26rem;
-        }
-        &:hover {
-          .project-links {
-            transform: translateY(-40%);
-            .project-link-item {
-              transform: scale(1.15);
-            }
-          }
-          .project-text {
-            opacity: 1;
-          }
-          background: red;
-        }
-        .project-links {
-          @extend .transition;
-          .project-link-item {
-            height: 2rem;
-            width: 2rem;
-            @include md {
-              height: 2.5rem;
-              width: 2.5rem;
-            }
-            svg {
-              width: 1rem;
-              @include md {
-                width: 1.3rem;
-              }
-            }
-            @extend .transition;
-          }
-        }
-        .project-text {
-          background: transparentize($color: $black, $amount: 0.5);
-          opacity: 0;
-          @extend .transition;
-          small {
-            font-size: 0.6rem;
-            @include md {
-              font-size: 0.8rem;
-            }
-          }
-        }
-      }
-    }
-  }
-  .project-navigation-dots {
-    border: 0.05rem solid transparent;
-    padding: 0.22rem;
-    @include md {
-      padding: 0.3rem;
-      border: 0.1rem solid transparent;
-    }
-    &.active {
-      background: transparent;
-      border-color: $white;
-      transform: scale(1.2);
-    }
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
+	[class*="projects-controller"] {
+		z-index: 15;
+	}
+	.projects-wrapper {
+		height: 17rem;
+		@include md {
+			height: 26rem;
+		}
+		.projects-container {
+			width: 75%;
+			@include lg {
+				width: 60%;
+			}
+			.project-items {
+				opacity: 0;
+				width: 140%;
+				height: 17rem;
+				@extend .transition;
+				@include sm {
+					width: 100%;
+				}
+				@include md {
+					width: 90%;
+					height: 26rem;
+				}
+				&:hover {
+					.project-links {
+						transform: translateY(-40%);
+						.project-link-item {
+							transform: scale(1.15);
+						}
+					}
+					.project-text {
+						opacity: 1;
+					}
+					background: red;
+				}
+				.project-links {
+					@extend .transition;
+					.project-link-item {
+						height: 2rem;
+						width: 2rem;
+						@include md {
+							height: 2.5rem;
+							width: 2.5rem;
+						}
+						svg {
+							width: 1rem;
+							@include md {
+								width: 1.3rem;
+							}
+						}
+						@extend .transition;
+					}
+				}
+				.project-text {
+					background: transparentize($color: $black, $amount: 0.5);
+					opacity: 0;
+					@extend .transition;
+					small {
+						font-size: 0.6rem;
+						@include md {
+							font-size: 0.8rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	.project-navigation-dots {
+		border: 0.05rem solid transparent;
+		padding: 0.22rem;
+		@include md {
+			padding: 0.3rem;
+			border: 0.1rem solid transparent;
+		}
+		&.active {
+			background: transparent;
+			border-color: $white;
+			transform: scale(1.2);
+		}
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
 }
 // contact ===============
 .contact {
-  input {
-    border: 2px solid $dark;
-    &:focus {
-      outline: none;
-    }
-  }
-  textarea {
-    resize: none;
-    height: 7rem;
-    @extend input;
-    @include md {
-      height: 10rem;
-    }
-  }
-  button {
-    border: 2px solid $dark;
-  }
+	input {
+		border: 2px solid $dark;
+		&:focus {
+			outline: none;
+		}
+	}
+	textarea {
+		resize: none;
+		height: 7rem;
+		@extend input;
+		@include md {
+			height: 10rem;
+		}
+	}
+	button {
+		border: 2px solid $dark;
+	}
 }
